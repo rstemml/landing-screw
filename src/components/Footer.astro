@@ -1,0 +1,147 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Schraubenkönig Dresden</h4>
+        <p>
+          Ihr verlässlicher Partner für hochwertige Befestigungstechnik
+          seit über 25 Jahren.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Kontakt</h4>
+        <p>
+          Industriestraße 42<br />
+          01129 Dresden<br />
+          Tel: +49 (0) 351 / 123 456 - 0<br />
+          E-Mail: info@schraubenkoenig-dresden.de
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Öffnungszeiten</h4>
+        <p>
+          Montag - Freitag: 07:00 - 18:00 Uhr<br />
+          Samstag: 08:00 - 13:00 Uhr<br />
+          Sonntag: Geschlossen
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Schnelllinks</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Schraubenkönig Dresden GmbH. Alle Rechte vorbehalten.</p>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <span>|</span>
+        <a href="#">Datenschutz</a>
+        <span>|</span>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: var(--spacing-xl);
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .footer-section h4 {
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .footer-legal a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-legal a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-legal span {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

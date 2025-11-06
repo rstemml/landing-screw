@@ -1,0 +1,150 @@
+---
+const features = [
+  {
+    title: "25+ Jahre Erfahrung",
+    description: "Seit 1998 Ihr verlässlicher Partner in Dresden",
+    icon: "📅"
+  },
+  {
+    title: "Große Auswahl",
+    description: "Über 50.000 Artikel ab Lager verfügbar",
+    icon: "📦"
+  },
+  {
+    title: "Schnelle Lieferung",
+    description: "Express-Lieferung innerhalb von 24 Stunden",
+    icon: "🚚"
+  },
+  {
+    title: "Expertenberatung",
+    description: "Fachkundige Beratung durch unser Team",
+    icon: "👥"
+  }
+];
+---
+
+<section id="ueber-uns" class="section about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Über uns</h2>
+        <p class="lead">
+          Der Schraubenkönig Dresden ist Ihr kompetenter Partner für
+          hochwertige Befestigungstechnik und Verbindungselemente.
+        </p>
+        <p>
+          Mit über 25 Jahren Erfahrung beliefern wir Industrie, Handwerk und
+          Gewerbe mit einem umfassenden Sortiment an Schrauben, Muttern, Dübeln
+          und Spezialartikeln. Unsere Stärke liegt in der Kombination aus großer
+          Lagerhaltung, schneller Verfügbarkeit und kompetenter Beratung.
+        </p>
+        <p>
+          Wir setzen auf höchste Qualitätsstandards und arbeiten ausschließlich
+          mit renommierten Herstellern zusammen. Unser Team aus erfahrenen
+          Fachleuten berät Sie gerne bei der Auswahl der optimalen Lösung für
+          Ihre spezifischen Anforderungen.
+        </p>
+      </div>
+      <div class="features-grid">
+        {features.map(feature => (
+          <div class="feature-card">
+            <div class="feature-icon">{feature.icon}</div>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .about-text h2 {
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+  }
+
+  .about-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-accent);
+  }
+
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: var(--spacing-md) 0;
+    line-height: 1.6;
+  }
+
+  .about-text p {
+    color: var(--color-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+
+  .feature-card {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-accent);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .feature-card h3 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .feature-card p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
